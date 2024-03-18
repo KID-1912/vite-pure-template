@@ -1,6 +1,33 @@
 # vite-pure-template
 
-一个纯净的vite模板，仅统一配置与目录结构
+一个纯净的 vite 模板，仅统一配置与目录结构
+
+## 目录结构
+
+参考 [Nuxt 目录结构](https://nuxt.com/docs/guide/directory-structure/app)
+
+```
+vite-pure-template
+├─assets
+├─components
+├─composables
+├─layouts
+├─middleware
+├─pages
+├─plugins
+├─public
+├─utils
+├─.env
+├─.env.development
+├─.env.development.local
+├─.env.production
+├─.gitignore
+├─index.html
+├─main.js
+├─package-lock.json
+├─package.json
+├─README.md
+```
 
 ## task
 
@@ -8,16 +35,12 @@
 
 参考社区模板
 
-目录结构参考next
-
 postcss
 
 prettier/eslint
 
 ts
 
-icon引入说明
+icon 引入说明
 
-tailwind说明
-
-
+tailwind 说明
