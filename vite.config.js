@@ -1,5 +1,7 @@
-import path from "path";
+import path from "node:path";
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from "vite";
+import WindiCSS from "vite-plugin-windicss";
+import legacy from "@vitejs/plugin-legacy";
 import { createHtmlPlugin } from "vite-plugin-html";
 
 export default defineConfig(({ command, mode }) => {
@@ -16,6 +18,8 @@ export default defineConfig(({ command, mode }) => {
       preprocessorOptions: {},
     },
     plugins: [
+      WindiCSS(),
+      legacy(),
       splitVendorChunkPlugin(),
       createHtmlPlugin({
         inject: {
@@ -25,6 +29,7 @@ export default defineConfig(({ command, mode }) => {
     ],
     server: {
       host: true,
+      port: 5173,
       proxy: env.VITE_API_BASE_URL,
     },
     build: {

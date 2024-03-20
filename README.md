@@ -35,32 +35,40 @@ vite-pure-template
 
 **VITE_BASE_URL** 公共基础路径
 
-**VITE_API_BASE_URL** API请求路径
+**VITE_API_BASE_URL** API 请求路径
 
-css 
+### 插件
 
+- vite-plugin-html
 
+- @vitejs/plugin-legacy
+
+- sass/less
+
+- postcss: autoprefixer/cssnano
 
 ## task
 
-基础配置
-自己觉得的
-
-开发环境代理
-打包输出目录
-
-
 参考社区模板
-
-postcss autofixer
-
-tailwind
 
 prettier/eslint
 
+svg icon
+
+layouts 编写
+
+modules 实例 (vue-router)
+
+vueuse
+
+dayjs lodash
+
+stores
+
 ts
 
-icon 引入说明
+集成方案说明
 
-tailwind 说明
+element-plus
 
+react
