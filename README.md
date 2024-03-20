@@ -67,7 +67,7 @@ stores
 
 ts
 
-集成方案说明
+### 更多支持
 
 element-plus
 
