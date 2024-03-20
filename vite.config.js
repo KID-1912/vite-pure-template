@@ -1,6 +1,7 @@
 import path from "node:path";
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from "vite";
 import WindiCSS from "vite-plugin-windicss";
+import eslint from "@rollup/plugin-eslint";
 import legacy from "@vitejs/plugin-legacy";
 import { createHtmlPlugin } from "vite-plugin-html";
 
@@ -15,10 +16,16 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     css: {
-      preprocessorOptions: {},
+      preprocessorOptions: {
+        less: {},
+        scss: {
+          additionalData: "",
+        },
+      },
     },
     plugins: [
       WindiCSS(),
+      eslint(),
       legacy(),
       splitVendorChunkPlugin(),
       createHtmlPlugin({
@@ -35,6 +42,9 @@ export default defineConfig(({ command, mode }) => {
     build: {
       outDir: "dist",
       sourcemap: false,
+      rollupOptions: {
+        commonjsOptions: { transformMixedEsModules: true },
+      },
     },
     reportCompressedSize: false, // gzip 压缩大小报告
   };

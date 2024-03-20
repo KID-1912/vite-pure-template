@@ -1,8 +1,9 @@
-import 'virtual:windi.css';
+import "virtual:windi.css";
 import "@/assets/styles/reset.css";
 import "@/assets/styles/global.scss";
 
 import viteLogo from "/vite.svg";
+
 document.querySelector("#app").innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
