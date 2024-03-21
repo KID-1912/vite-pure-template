@@ -51,8 +51,6 @@ vite-pure-template
 
 参考社区模板
 
-prettier/eslint
-
 svg icon
 
 layouts 编写

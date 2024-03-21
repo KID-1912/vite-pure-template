@@ -19,6 +19,8 @@ module.exports = {
     es6: true,
     jquery: true,
   },
-  extends: "eslint:recommended",
-  rules: {},
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
+  rules: {
+    "prettier/prettier": "warn",
+  },
 };
