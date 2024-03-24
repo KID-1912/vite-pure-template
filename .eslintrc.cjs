@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
-  parser: "@babel/eslint-parser",
   parserOptions: {
+    parser: "@babel/eslint-parser",
     ecmaVersion: 2019,
     sourceType: "module",
     ecmaFeatures: {
@@ -19,7 +19,11 @@ module.exports = {
     es6: true,
     jquery: true,
   },
-  extends: ["eslint:recommended", "plugin:prettier/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:prettier/recommended",
+  ],
   rules: {
     "prettier/prettier": "warn",
   },

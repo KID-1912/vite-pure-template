@@ -47,17 +47,17 @@ vite-pure-template
 
 - postcss: autoprefixer/cssnano
 
+- eslint：@babel/eslint-parser、vite-plugin-eslint、eslint-plugin-vue
+
+- prettier：eslint-config-prettier、eslint-plugin-prettier
+
+- @vitejs/plugin-vue
+
+- vite-svg-loader
+
 ## task
 
-参考社区模板
-
-svg icon
-
-layouts 编写
-
 modules 实例 (vue-router)
-
-vueuse
 
 dayjs lodash
 
@@ -70,3 +70,22 @@ ts
 element-plus
 
 react
+
+
+
+
+eslint vite踩坑
+
+1. module type与.eslintrc.js坑，修改为cjs
+
+2. 虚拟windicss.css 报错 无法找到No configuration file in @windi.css 
+无法虚拟模块，改用 vite-plugin-eslint
+
+3. vu3 setup 语法，报错 使用 eslint-plugin-vue，支持vue
+@vitejs/plugin-vue
+[plugin:vite-plugin-eslint] error  Parsing error: This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript". (1:0)
+
+解决：https://eslint.vuejs.org/user-guide/ How to use a custom parser?
+
+
+vite中 svg icon 异步组件方案 
