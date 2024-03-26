@@ -4,7 +4,7 @@ const props = defineProps({
   name: { type: String, default: "" },
 });
 
-const svgModules = import.meta.glob("@/assets/images/svg/**/*.svg", {
+const svgModules = import.meta.glob("./svg/**/*.svg", {
   query: "?component",
 });
 

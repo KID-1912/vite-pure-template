@@ -1,8 +1,9 @@
 import { defineComponent, defineAsyncComponent, h } from "vue";
 
-const svgModules = import.meta.glob("./**/*.svg", {
+const svgModules = import.meta.glob("./svg/**/*.svg", {
   query: "?component",
 });
+console.log(svgModules);
 
 export default defineComponent({
   name: "SvgIcon",
@@ -11,7 +12,7 @@ export default defineComponent({
   },
   setup(props) {
     const SvgComponent = defineAsyncComponent(
-      svgModules[`/src/assets/images/svg/${props.name}.svg`]
+      svgModules[`./svg/${props.name}.svg`]
     );
     return () => h(SvgComponent);
   },
