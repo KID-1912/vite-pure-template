@@ -1,6 +1,7 @@
 <script setup>
 // import viteLogo from "/vite.svg";
-import SvgIcon from "./components/SvgIcon.vue";
+// import SvgIcon from "./components/SvgIcon/SvgIcon.vue";
+import SvgIcon from "./components/SvgIcon/SvgIcon.js";
 </script>
 
 <template>
@@ -14,3 +15,4 @@ import SvgIcon from "./components/SvgIcon.vue";
 </template>
 
 <style lang="less" scoped></style>
+./components/SvgIcon/SvgIcon.js

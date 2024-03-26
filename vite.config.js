@@ -3,7 +3,7 @@ import { defineConfig, loadEnv, splitVendorChunkPlugin } from "vite";
 import vue from "@vitejs/plugin-vue";
 import svgLoader from "vite-svg-loader";
 import WindiCSS from "vite-plugin-windicss";
-import eslintPlugin from "vite-plugin-eslint";
+import eslint from "vite-plugin-eslint";
 import legacy from "@vitejs/plugin-legacy";
 import { createHtmlPlugin } from "vite-plugin-html";
 
@@ -29,8 +29,8 @@ export default defineConfig(({ command, mode }) => {
       vue(),
       svgLoader(),
       WindiCSS(),
-      eslintPlugin(),
-      legacy(),
+      eslint(),
+      // legacy(),
       splitVendorChunkPlugin(),
       createHtmlPlugin({
         inject: {
