@@ -28,5 +28,10 @@
     "vite-plugin-windicss": "^1.9.3",
     "vite-svg-loader": "^5.1.0",
     "windicss": "^3.5.6"
+  },
+  "dependencies": {
+    "@types/vue-router": "^2.0.0",
+    "pinia": "^2.1.7",
+    "vue-router": "^4.3.0"
   }
 }
