@@ -55,16 +55,8 @@ vite-pure-template
 
 - vite-svg-loader
 
-## task
+### 自动导入
 
-modules 实例 (vue-router)
+vue
 
-dayjs lodash
-
-stores
-
-ts
-
-### 更多支持
-
-element-plus
+vue-router
