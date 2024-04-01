@@ -3,7 +3,6 @@ import { defineComponent, defineAsyncComponent, h } from "vue";
 const svgModules = import.meta.glob("./svg/**/*.svg", {
   query: "?component",
 });
-console.log(svgModules);
 
 export default defineComponent({
   name: "SvgIcon",

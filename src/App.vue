@@ -15,4 +15,3 @@ import SvgIcon from "./components/SvgIcon/SvgIcon.js";
 </template>
 
 <style lang="less" scoped></style>
-./components/SvgIcon/SvgIcon.js
