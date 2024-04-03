@@ -5,6 +5,7 @@ import svgLoader from "vite-svg-loader";
 import WindiCSS from "vite-plugin-windicss";
 import eslint from "vite-plugin-eslint";
 import legacy from "@vitejs/plugin-legacy";
+import AutoImport from "unplugin-auto-import/vite";
 import { createHtmlPlugin } from "vite-plugin-html";
 
 export default defineConfig(({ command, mode }) => {
@@ -27,6 +28,9 @@ export default defineConfig(({ command, mode }) => {
     },
     plugins: [
       vue(),
+      AutoImport({
+        imports: ["vue", "vue-router"],
+      }),
       svgLoader(),
       WindiCSS(),
       eslint(),
@@ -46,8 +50,13 @@ export default defineConfig(({ command, mode }) => {
     build: {
       outDir: "dist",
       sourcemap: false,
+      commonjsOptions: { transformMixedEsModules: true },
       rollupOptions: {
-        commonjsOptions: { transformMixedEsModules: true },
+        output: {
+          chunkFileNames: "js/[name]-[hash].js",
+          entryFileNames: "js/[name]-[hash].js",
+          assetFileNames: "[ext]/[name]-[hash].[ext]",
+        },
       },
     },
     reportCompressedSize: false, // gzip 压缩大小报告

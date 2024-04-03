@@ -39,24 +39,29 @@ vite-pure-template
 
 ### 插件
 
+- @vitejs/plugin-vue
+
 - vite-plugin-html
 
 - @vitejs/plugin-legacy
-
-- sass/less
-
-- postcss: autoprefixer/cssnano
 
 - eslint：@babel/eslint-parser、vite-plugin-eslint、eslint-plugin-vue
 
 - prettier：eslint-config-prettier、eslint-plugin-prettier
 
-- @vitejs/plugin-vue
-
 - vite-svg-loader
 
-### 自动导入
+- windicss
 
-vue
+- sass/less
 
-vue-router
+- postcss: autoprefixer/cssnano
+
+- unplugin-auto-import
+
+rollup-plugin-visualizer 分析 rollup-plugin-visualizer
+
+注意动态导入：路由动态引入，以及svgicon方案
+
+注意按需引入：vite支持分析依赖，并对 import {xxx} from "xxx" 进行tree-shaking
+不要出现 import _ as xxx from "xxx"，这样会导致整个模块被引入或者export _ from "xxx"，这样会导致整个模块被导出
