@@ -8,25 +8,37 @@
 
 ```
 vite-pure-template
-├─assets
-├─components
-├─composables
-├─layouts
-├─middleware
-├─pages
-├─plugins
+├─dist
+├─node_modules
 ├─public
-├─utils
+├─src
+|  ├─assets
+|  |   ├─styles
+|  |   ├─images
+|  ├─components
+|  ├─composables
+|  ├─layouts
+|  ├─middleware
+|  ├─modules
+|  ├─pages
+|  ├─plugins
+|  ├─router
+|  ├─stores
+|  ├─App.vue
+|  ├─main.js
 ├─.env
 ├─.env.development
-├─.env.development.local
 ├─.env.production
+├─.eslintrc.cjs
 ├─.gitignore
+├─.prettier.js
 ├─index.html
-├─main.js
 ├─package-lock.json
 ├─package.json
+├─postcss.config.js
 ├─README.md
+├─vite.config.js
+├─windi.config.js
 ```
 
 ## 集成特性
@@ -43,7 +55,7 @@ vite-pure-template
 
 - vite-plugin-html
 
-- @vitejs/plugin-legacy
+- vite-plugin-legacy-swc
 
 - eslint：@babel/eslint-parser、vite-plugin-eslint、eslint-plugin-vue
 
@@ -59,9 +71,3 @@ vite-pure-template
 
 - unplugin-auto-import
 
-rollup-plugin-visualizer 分析 rollup-plugin-visualizer
-
-注意动态导入：路由动态引入，以及svgicon方案
-
-注意按需引入：vite支持分析依赖，并对 import {xxx} from "xxx" 进行tree-shaking
-不要出现 import _ as xxx from "xxx"，这样会导致整个模块被引入或者export _ from "xxx"，这样会导致整个模块被导出

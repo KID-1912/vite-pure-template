@@ -4,9 +4,10 @@ import vue from "@vitejs/plugin-vue";
 import svgLoader from "vite-svg-loader";
 import WindiCSS from "vite-plugin-windicss";
 import eslint from "vite-plugin-eslint";
-import legacy from "@vitejs/plugin-legacy";
+import legacy from "vite-plugin-legacy-swc";
 import AutoImport from "unplugin-auto-import/vite";
 import { createHtmlPlugin } from "vite-plugin-html";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -34,13 +35,14 @@ export default defineConfig(({ command, mode }) => {
       svgLoader(),
       WindiCSS(),
       eslint(),
-      // legacy(),
+      legacy(),
       splitVendorChunkPlugin(),
       createHtmlPlugin({
         inject: {
           data: { build_time: new Date().toLocaleString() },
         },
       }),
+      visualizer({ open: true }),
     ],
     server: {
       host: true,
