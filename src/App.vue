@@ -1,8 +1,4 @@
-<script setup>
-// import viteLogo from "/vite.svg";
-// import SvgIcon from "./components/SvgIcon/SvgIcon.vue";
-import SvgIcon from "./components/SvgIcon/SvgIcon.js";
-</script>
+<script setup></script>
 
 <template>
   <div>
