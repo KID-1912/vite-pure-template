@@ -33,6 +33,7 @@
     "windicss": "^3.5.6"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.12",
     "@types/vue-router": "^2.0.0",
     "lodash-es": "^4.17.21",
     "pinia": "^2.1.7",

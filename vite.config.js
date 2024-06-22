@@ -31,6 +31,10 @@ export default defineConfig(({ command, mode }) => {
       vue(),
       AutoImport({
         imports: ["vue", "vue-router"],
+        eslintrc: {
+          enabled: true,
+          filepath: "./eslintrc-auto-import.json",
+        },
       }),
       svgLoader(),
       WindiCSS(),
@@ -42,7 +46,7 @@ export default defineConfig(({ command, mode }) => {
           data: { build_time: new Date().toLocaleString() },
         },
       }),
-      visualizer({ open: true }),
+      visualizer({ open: true, filename: "dist/stats.html" }),
     ],
     server: {
       host: true,
