@@ -10,9 +10,7 @@ export default defineComponent({
     name: { type: String, default: "" },
   },
   setup(props) {
-    const SvgComponent = defineAsyncComponent(
-      svgModules[`./svg/${props.name}.svg`]
-    );
+    const SvgComponent = defineAsyncComponent(svgModules[`./svg/${props.name}.svg`]);
     return () => h(SvgComponent);
   },
 });

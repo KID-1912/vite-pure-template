@@ -38,6 +38,7 @@ export default defineConfig(({ command, mode }) => {
       legacy(),
       splitVendorChunkPlugin(),
       createHtmlPlugin({
+        template: "src/index.html",
         inject: {
           data: { build_time: new Date().toLocaleString() },
         },
