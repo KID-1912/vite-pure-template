@@ -6,8 +6,13 @@ import WindiCSS from "vite-plugin-windicss";
 import eslint from "vite-plugin-eslint";
 import legacy from "vite-plugin-legacy-swc";
 import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import Icons from "unplugin-icons/vite";
+import IconsResolver from "unplugin-icons/resolver";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { visualizer } from "rollup-plugin-visualizer";
+
+const pathSrc = path.resolve(__dirname, "src");
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -35,14 +40,27 @@ export default defineConfig(({ command, mode }) => {
           enabled: true,
           filepath: "./eslintrc-auto-import.json",
         },
+        resolvers: [],
+        dts: path.resolve(pathSrc, "auto-imports.d.ts"),
       }),
+      Components({
+        resolvers: [
+          IconsResolver({
+            prefix: false,
+            enabledCollections: ["mingcute"],
+            alias: { mc: "mingcute" },
+          }),
+        ],
+        dts: path.resolve(pathSrc, "components.d.ts"),
+      }),
+      Icons({ autoInstall: true }),
       svgLoader(),
       WindiCSS(),
       eslint(),
       legacy(),
       splitVendorChunkPlugin(),
       createHtmlPlugin({
-        template: "src/index.html",
+        template: "index.html",
         inject: {
           data: { build_time: new Date().toLocaleString() },
         },

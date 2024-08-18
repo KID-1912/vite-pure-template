@@ -31,7 +31,7 @@ vite-pure-template
 ├─.env.production
 ├─.eslintrc.cjs
 ├─.gitignore
-├─.prettier.js
+├─.prettier.cjs
 ├─index.html
 ├─package-lock.json
 ├─package.json
@@ -51,23 +51,36 @@ vite-pure-template
 
 ### 插件
 
-- @vitejs/plugin-vue
+- @vitejs/plugin-vue（Vue SFC单文件组件支持）
 
-- vite-plugin-html
+- vite-plugin-html（自定义html文件）
 
-- vite-plugin-legacy-swc
+- vite-plugin-legacy-swc（构建旧版本备份，按需）
 
 - eslint：@babel/eslint-parser、vite-plugin-eslint、eslint-plugin-vue
 
 - prettier：eslint-config-prettier、eslint-plugin-prettier
 
-- vite-svg-loader
+- vite-svg-loader（加载svg文件为Component、URL...）
 
 - windicss
 
 - sass/less
 
-- postcss: autoprefixer/cssnano
+- postcss: autoprefixer、cssnano
 
-- unplugin-auto-import
+- unplugin-auto-import/unplugin-vue-components/unplugin-icons（按需自动导入）
 
+- @iconify-json（支持iconify图标集）
+
+### 依赖库
+
+- pinia
+
+- vue-router
+
+- vueuse
+
+- axios
+
+- lodash-es
