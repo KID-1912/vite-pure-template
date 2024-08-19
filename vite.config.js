@@ -1,5 +1,5 @@
 import path from "node:path";
-import { defineConfig, loadEnv, splitVendorChunkPlugin } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import svgLoader from "vite-svg-loader";
 import WindiCSS from "vite-plugin-windicss";
@@ -11,8 +11,6 @@ import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { visualizer } from "rollup-plugin-visualizer";
-
-const pathSrc = path.resolve(__dirname, "src");
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -41,7 +39,6 @@ export default defineConfig(({ command, mode }) => {
           filepath: "./eslintrc-auto-import.json",
         },
         resolvers: [],
-        dts: path.resolve(pathSrc, "auto-imports.d.ts"),
       }),
       Components({
         resolvers: [
@@ -51,16 +48,13 @@ export default defineConfig(({ command, mode }) => {
             alias: { mc: "mingcute" },
           }),
         ],
-        dts: path.resolve(pathSrc, "components.d.ts"),
       }),
       Icons({ autoInstall: true }),
       svgLoader(),
       WindiCSS(),
       eslint(),
       legacy(),
-      splitVendorChunkPlugin(),
       createHtmlPlugin({
-        template: "index.html",
         inject: {
           data: { build_time: new Date().toLocaleString() },
         },
@@ -81,6 +75,15 @@ export default defineConfig(({ command, mode }) => {
           chunkFileNames: "js/[name]-[hash].js",
           entryFileNames: "js/[name]-[hash].js",
           assetFileNames: "[ext]/[name]-[hash].[ext]",
+          // manualChunks: {
+          //   vue: ["vue"],
+          // },
+          // manualChunks(id) {
+          //   if (id.includes("node_modules")) {
+          //     console.log(id);
+          //     return id.toString().split("node_modules/")[1].split("/")[0].toString();
+          //   }
+          // },
         },
       },
     },
