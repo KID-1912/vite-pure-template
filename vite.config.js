@@ -64,7 +64,9 @@ export default defineConfig(({ command, mode }) => {
     server: {
       host: true,
       port: 5173,
-      proxy: env.VITE_API_BASE_URL,
+      proxy: {
+        "/": env.VITE_API_BASE_URL,
+      },
     },
     build: {
       outDir: "dist",
