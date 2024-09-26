@@ -7,6 +7,9 @@ export function createAxios(options = {}) {
   const defaultOptions = {
     baseURL: VITE_API_BASE_URL,
     timeout: 12000,
+    headers: {
+      "Content-Type": "application/www-form-urlencoded",
+    },
   };
   const service = axios.create({ ...defaultOptions, ...options });
   setupInterceptor(service);

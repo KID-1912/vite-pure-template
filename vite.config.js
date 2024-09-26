@@ -59,7 +59,7 @@ export default defineConfig(({ command, mode }) => {
           data: { build_time: new Date().toLocaleString() },
         },
       }),
-      visualizer({ open: true, filename: "dist/stats.html" }),
+      visualizer({ open: false, filename: "dist/stats.html" }),
     ],
     server: {
       host: true,
