@@ -84,3 +84,7 @@ vite-pure-template
 - axios
 
 - lodash-es
+
+#### todo
+
+项目级别prettier/eslint支持，.vscode支持
