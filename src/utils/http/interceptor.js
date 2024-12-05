@@ -12,10 +12,13 @@ const reqReject = (error) => {
 
 const SUCCESS_CODES = [200];
 const resResolve = (response) => {
-  const { status, data } = response;
+  const { status, data, request } = response;
   const code = data?.code || status;
   const message = data?.message || response.statusText;
   if (SUCCESS_CODES.includes(code)) {
+    if (request.responseType === "blob") {
+      return response; // blob类型响应数据
+    }
     return data;
   } else {
     resErrorPreHandle(code, message);
